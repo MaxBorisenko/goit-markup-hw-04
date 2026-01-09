@@ -33,11 +33,16 @@ img{
     margin: 0 auto;
     padding: 0 15px;
 }
+ 
+button{
+    cursor: pointer;
+}
 
 /* header */
 
 .header{
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 .header-container{
     display: flex;
@@ -82,6 +87,22 @@ img{
         line-height: 1.5;
         letter-spacing: 0.02em;
         color: #2e2f42;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-nav-menu-list-link.current {
+    position: relative;
+}
+
+.header-nav-menu-list-link.current::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #404bbf;
+    border-radius: 2px;
 }
 
 .header-address{
@@ -105,12 +126,15 @@ img{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .header-address-menu-list-link:hover,
 .header-address-menu-list-link:focus,
 .header-nav-menu-list-link:hover,
-.header-nav-menu-list-link:focus {
+.header-nav-menu-list-link:focus,
+.header-nav-menu-list-link.current {
     color: #404BBF;
 }
 
@@ -118,8 +142,19 @@ img{
 /* hero */
 
 .hero{
+    max-width: 1440px;
+    margin: 0 auto;
     background-color:#2E2F42;
     padding: 188px 0;
+    background-image: linear-gradient(
+    to bottom,
+    rgba(46, 47, 66, 0.7),
+    rgba(46, 47, 66, 0.7)),
+     url('../images/herobackground.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
 }
 
 .hero-container{
@@ -157,6 +192,7 @@ img{
     line-height: 1.5;
     letter-spacing: 0.04em;
      color: #FFFFFF;
+    transition: background-color  250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -193,6 +229,18 @@ img{
 
 .features-list-item{
     width: calc((100% - 72px) / 4);
+}
+
+.features-list-item-icon{
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    max-width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;;
 }
 
 .features-list-item-title{
@@ -257,6 +305,34 @@ font-weight: 400;
 .team-list-item-text{
 }
 
+.team-social{
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.team-social-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4D5AE5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-social-link:hover{
+    background-color:#31D0AA;
+}
+
+.social-icon{
+    fill: #FFFFFF;
+}
+
 .portfolio-title,
 .team-title,
 .features-title{
@@ -294,6 +370,34 @@ font-weight: 400;
     width: calc((100% - 48px) / 3);
 }
 
+.portfolio-list-item:hover {
+    cursor: pointer;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    }
+
+.portfolio-list-item:hover .porfilio-item-text{
+    transform: translateY(0);
+}
+
+.porfilio-item-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.porfilio-item-text{
+    position: absolute;
+    top: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    background-color: #4d5ae5;
+    padding: 40px 32px 164px 32px;
+    transform: translateY(100%);
+    transition:  250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .portfolio-list-text{
     border-bottom: 1px solid #e7e9fc;
     border-left: 1px solid #e7e9fc;
@@ -313,7 +417,7 @@ font-weight: 400;
 .footer-content{
     display: flex;
     flex-direction: column;
-   max-width: 264px;
+    max-width: 264px;
     gap:16px;
 } 
 
@@ -323,6 +427,19 @@ font-weight: 400;
     color: #f4f4fd;
 }
 
+.footer{
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+}
+
 .footer-logo .logo-pat {
     color: #f4f4fd;
+}
+
+.footer-social{
+    display: flex;
+    flex-direction: column;
+    max-width: 264px;
+    gap: 16px;
 }
