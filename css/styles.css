@@ -289,7 +289,7 @@ font-weight: 400;
 
 .team-list-item{
     width:calc((100% - 72px) / 4);
-    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba (46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     background: #fff;
     border-radius: 0 0 4px 4px;
 }
@@ -331,7 +331,7 @@ font-weight: 400;
 }
 
 .social-icon{
-    fill: #FFFFFF;
+    fill: #f4f4fd;
 }
 
 .portfolio-title,
@@ -435,6 +435,7 @@ font-weight: 400;
 .footer{
     display: flex;
     flex-direction: row;
+    align-items: baseline;
     gap: 120px;
 }
 
@@ -447,6 +448,14 @@ font-weight: 400;
     flex-direction: column;
     max-width: 264px;
     gap: 16px;
+}
+
+.social-lable{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #fff;
 }
 
 .foter-list-social{
